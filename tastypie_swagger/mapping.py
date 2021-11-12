@@ -96,7 +96,7 @@ class ResourceSwaggerMapping(object):
         Get a basic summary string for a single operation
         """
         key = '%s-%s' % (method.lower(), detail and 'detail' or 'list')
-        plural = not detail and method is 'get'
+        plural = not detail and method == 'get'
         verbose_name = self.get_resource_verbose_name(plural=plural)
         summary = self.OPERATION_SUMMARIES.get(key, '')
         if summary:
